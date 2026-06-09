@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BookOpen, Mail, Lock, ArrowRight } from 'lucide-react';
 import toast from 'react-hot-toast';
-import { loginUser, registerUser } from '../../services/api';
+import { loginUser, registerUser } from '../services/api';
 
 export default function Login() {
   const navigate = useNavigate();
