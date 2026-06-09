@@ -47,7 +47,7 @@ export default function QuizCard({ quiz }) {
         </div>
 
         {/* Title */}
-        <h4 className="font-headings font-bold text-lg text-white mb-2 group-hover:text-primary transition-colors line-clamp-1">
+        <h4 className="font-headings font-bold text-lg text-text mb-2 group-hover:text-primary transition-colors line-clamp-1">
           {quiz.title}
         </h4>
 
@@ -101,7 +101,7 @@ export default function QuizCard({ quiz }) {
                 strokeLinecap="round"
               />
             </svg>
-            <span className="absolute text-[10px] font-bold text-white">
+            <span className="absolute text-[10px] font-bold text-text">
               {highScore !== null ? `${highScore}%` : '—'}
             </span>
           </div>
@@ -109,7 +109,7 @@ export default function QuizCard({ quiz }) {
             <span className="text-[10px] text-text-muted uppercase font-bold tracking-wider">
               {highScore !== null ? 'Best Attempt' : 'Status'}
             </span>
-            <span className="text-xs text-white font-semibold">
+            <span className="text-xs text-text font-semibold">
               {highScore !== null ? 'Completed' : 'Not Taken'}
             </span>
           </div>

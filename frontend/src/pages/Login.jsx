@@ -14,6 +14,13 @@ export default function Login() {
   });
   const [loading, setLoading] = useState(false);
 
+  // Redirect to dashboard if already logged in
+  React.useEffect(() => {
+    if (localStorage.getItem('token')) {
+      navigate('/dashboard', { replace: true });
+    }
+  }, [navigate]);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };

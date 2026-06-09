@@ -11,7 +11,7 @@ export default function ProgressBar({ current, total }) {
       {/* Percentage label */}
       <div className="flex justify-between items-center mb-1.5 text-xs font-bold text-text-muted">
         <span>PROGRESS</span>
-        <span className="text-white bg-surface px-2 py-0.5 rounded-md border border-border">{percentage}%</span>
+        <span className="text-text bg-surface px-2 py-0.5 rounded-md border border-border">{percentage}%</span>
       </div>
 
       {/* Progress track */}

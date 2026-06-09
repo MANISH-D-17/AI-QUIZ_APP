@@ -13,7 +13,7 @@ export default function QuestionPalette({
 }) {
   return (
     <div className="bg-surface border border-border rounded-2xl p-5 shadow-xl w-full">
-      <h5 className="font-headings font-bold text-sm text-white tracking-wider uppercase mb-4 pb-2 border-b border-border/60">
+      <h5 className="font-headings font-bold text-sm text-text tracking-wider uppercase mb-4 pb-2 border-b border-border/60">
         Question Map
       </h5>
 
@@ -33,7 +33,7 @@ export default function QuestionPalette({
             stateStyles = 'bg-amber-500/10 border-amber-500/30 text-secondary hover:bg-amber-500/20';
           }
           if (isCurrent) {
-            stateStyles += ' ring-2 ring-white border-transparent text-white';
+            stateStyles += ' ring-2 ring-white border-transparent text-text';
           }
 
           return (

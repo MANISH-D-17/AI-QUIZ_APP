@@ -40,12 +40,12 @@ export default function Modal({ isOpen, onClose, title, children, maxWidth = 'ma
       >
         {/* Header bar */}
         <div className="flex items-center justify-between pb-4 border-b border-border/80">
-          <h3 className="text-lg font-headings font-bold text-white tracking-wide">
+          <h3 className="text-lg font-headings font-bold text-text tracking-wide">
             {title}
           </h3>
           <button
             onClick={onClose}
-            className="text-text-muted hover:text-white hover:bg-surface-2 p-1.5 rounded-xl transition-all duration-200"
+            className="text-text-muted hover:text-text hover:bg-surface-2 p-1.5 rounded-xl transition-all duration-200"
             aria-label="Close modal"
           >
             <X className="h-5 w-5" />

@@ -29,7 +29,7 @@ export default function TopicBreakdown({ topicsData }) {
           >
             {/* Header */}
             <div className="flex justify-between items-start mb-3">
-              <span className="font-headings font-bold text-sm text-white tracking-wide truncate pr-2">
+              <span className="font-headings font-bold text-sm text-text tracking-wide truncate pr-2">
                 {item.topic}
               </span>
               <span className={`text-xs font-bold px-2 py-0.5 rounded-full border ${scoreColor}`}>

@@ -58,7 +58,7 @@ export default function SmartSearch({ quizzes, placeholder = "Search quizzes by 
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => query.trim() !== '' && setIsOpen(true)}
           placeholder={placeholder}
-          className="w-full bg-surface border border-border focus:border-accent hover:border-border-2 rounded-2xl pl-12 pr-32 py-4 text-base text-white placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent/40 shadow-xl transition-all duration-300"
+          className="w-full bg-surface border border-border focus:border-accent hover:border-border-2 rounded-2xl pl-12 pr-32 py-4 text-base text-text placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-accent/40 shadow-xl transition-all duration-300"
         />
 
         {/* Right AI Sparkle Badge Overlay */}
@@ -85,7 +85,7 @@ export default function SmartSearch({ quizzes, placeholder = "Search quizzes by 
               >
                 <div className="flex-1 min-w-0 pr-4">
                   <div className="flex items-center space-x-2 mb-1">
-                    <h5 className="font-bold text-sm text-white group-hover:text-primary transition-colors truncate">
+                    <h5 className="font-bold text-sm text-text group-hover:text-primary transition-colors truncate">
                       {quiz.title}
                     </h5>
                     <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-surface-2 border border-border text-text-muted uppercase">
@@ -113,7 +113,7 @@ export default function SmartSearch({ quizzes, placeholder = "Search quizzes by 
       {/* Suggestion empty state dropdown */}
       {isOpen && query.trim() !== '' && suggestions.length === 0 && (
         <div className="absolute top-full left-0 right-0 mt-2 bg-surface border border-border/80 rounded-2xl shadow-2xl p-6 text-center text-sm text-text-muted backdrop-blur-md">
-          No matches found for "<span className="text-white font-bold">{query}</span>". Try other keywords like 'python', 'easy', or 'algebra'.
+          No matches found for "<span className="text-text font-bold">{query}</span>". Try other keywords like 'python', 'easy', or 'algebra'.
         </div>
       )}
     </div>

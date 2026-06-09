@@ -17,7 +17,8 @@ exports.saveResult = async (req, res, next) => {
     } = req.body;
 
     const result = new Result({
-      userName: userName || "Alex",
+      user: req.user._id,
+      userName: req.user.name,
       quizId,
       quizTitle,
       score,
@@ -44,7 +45,7 @@ exports.saveResult = async (req, res, next) => {
 // GET all attempts history
 exports.getResults = async (req, res, next) => {
   try {
-    const results = await Result.find().sort({ createdAt: -1 });
+    const results = await Result.find({ user: req.user._id }).sort({ createdAt: -1 });
 
     res.status(200).json({
       success: true,
@@ -64,10 +65,10 @@ exports.getResultById = async (req, res, next) => {
 
     // Check if valid ObjectId, lookup in MongoDB
     if (id.match(/^[0-9a-fA-F]{24}$/)) {
-      result = await Result.findById(id);
+      result = await Result.findOne({ _id: id, user: req.user._id });
     } else {
       // In case we're matching string custom mock IDs
-      result = await Result.findOne({ quizId: id });
+      result = await Result.findOne({ quizId: id, user: req.user._id });
     }
 
     if (!result) {
@@ -113,7 +114,7 @@ exports.getLeaderboard = async (req, res, next) => {
 // GET dynamically aggregated analytics from MongoDB attempts
 exports.getAnalytics = async (req, res, next) => {
   try {
-    const results = await Result.find().sort({ createdAt: -1 });
+    const results = await Result.find({ user: req.user._id }).sort({ createdAt: -1 });
 
     const totalQuizzes = results.length;
     let averageScore = 0;

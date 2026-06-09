@@ -36,22 +36,25 @@ export default function App() {
         {/* A. STANDALONE PAGES */}
         <Route path="/" element={<Login />} />
         
-        {/* B. EXPLORATION ROUTES (using standard Navbar/Footer Layout) */}
-        <Route element={<MainLayout />}>
-          <Route path="/dashboard" element={<Home />} />
-          <Route path="/quizzes" element={<QuizList />} />
-          <Route path="/result/:id" element={<QuizResult />} />
-          <Route path="/leaderboard" element={<Leaderboard />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/analytics" element={<Analytics />} />
+        {/* B. PROTECTED ROUTES */}
+        <Route element={<ProtectedRoute />}>
+          {/* 1. EXPLORATION ROUTES (using standard Navbar/Footer Layout) */}
+          <Route element={<MainLayout />}>
+            <Route path="/dashboard" element={<Home />} />
+            <Route path="/quizzes" element={<QuizList />} />
+            <Route path="/result/:id" element={<QuizResult />} />
+            <Route path="/leaderboard" element={<Leaderboard />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/analytics" element={<Analytics />} />
+          </Route>
+
+          {/* 2. DISTRACTION-FREE ACTIVE QUIZ ROUTE (no headers/footers) */}
+          <Route element={<QuizLayout />}>
+            <Route path="/quiz/:id" element={<QuizTake />} />
+          </Route>
         </Route>
 
-        {/* C. DISTRACTION-FREE ACTIVE QUIZ ROUTE (no headers/footers) */}
-        <Route element={<QuizLayout />}>
-          <Route path="/quiz/:id" element={<QuizTake />} />
-        </Route>
-
-        {/* D. WILDCARD FALLBACK */}
+        {/* C. WILDCARD FALLBACK */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

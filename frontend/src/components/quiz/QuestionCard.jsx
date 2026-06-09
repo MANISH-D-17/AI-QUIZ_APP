@@ -78,7 +78,7 @@ export default function QuestionCard({
       </div>
 
       {/* Question Text */}
-      <h3 className="text-xl md:text-2xl font-bold leading-relaxed text-white mb-6">
+      <h3 className="text-xl md:text-2xl font-bold leading-relaxed text-text mb-6">
         {question.questionText}
       </h3>
 
@@ -102,11 +102,11 @@ export default function QuestionCard({
 
             if (isCorrect) {
               // Highlight correct answer in green
-              optionStyles = 'border-primary bg-primary/10 text-white animate-correct';
+              optionStyles = 'border-primary bg-primary/10 text-text animate-correct';
               showIcon = <CheckCircle2 className="h-5 w-5 text-primary fill-primary/10 mr-3 animate-scale-in flex-shrink-0" />;
             } else if (isUserChoice) {
               // User picked a wrong answer
-              optionStyles = 'border-danger bg-danger/10 text-white animate-wrong';
+              optionStyles = 'border-danger bg-danger/10 text-text animate-wrong';
               showIcon = <XCircle className="h-5 w-5 text-danger fill-danger/10 mr-3 animate-scale-in flex-shrink-0" />;
             } else {
               // Unselected wrong options
@@ -115,7 +115,7 @@ export default function QuestionCard({
           } else {
             // Taking Mode Styles
             if (isSelected) {
-              optionStyles = 'border-primary bg-primary/10 text-white ring-1 ring-primary';
+              optionStyles = 'border-primary bg-primary/10 text-text ring-1 ring-primary';
               showIcon = <div className="h-5 w-5 rounded-full border-2 border-primary bg-primary flex items-center justify-center mr-3 animate-scale-in flex-shrink-0"><div className="h-2 w-2 rounded-full bg-white" /></div>;
             } else {
               showIcon = <div className="h-5 w-5 rounded-full border border-text-muted mr-3 flex-shrink-0" />;

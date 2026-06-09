@@ -25,7 +25,7 @@ export default function AdaptiveDifficulty({
       {/* Close button */}
       <button 
         onClick={onClose}
-        className="absolute top-3 right-3 text-text-muted hover:text-white p-1 rounded-lg hover:bg-surface-2 transition-colors"
+        className="absolute top-3 right-3 text-text-muted hover:text-text p-1 rounded-lg hover:bg-surface-2 transition-colors"
         aria-label="Dismiss alert"
       >
         <X className="h-4 w-4" />
@@ -38,7 +38,7 @@ export default function AdaptiveDifficulty({
         ) : (
           <Flame className="h-5 w-5 text-accent fill-accent animate-bounce" />
         )}
-        <span className="font-headings font-bold text-sm text-white">
+        <span className="font-headings font-bold text-sm text-text">
           {isStruggling ? 'AI Difficulty Tuning' : "You're on Fire! 🔥"}
         </span>
       </div>
@@ -55,7 +55,7 @@ export default function AdaptiveDifficulty({
       <div className="flex items-center justify-end space-x-3 pt-3 border-t border-border/40">
         <button
           onClick={onClose}
-          className="text-xs font-bold text-text-muted hover:text-white px-3 py-1.5 rounded-lg transition-colors"
+          className="text-xs font-bold text-text-muted hover:text-text px-3 py-1.5 rounded-lg transition-colors"
         >
           Dismiss
         </button>

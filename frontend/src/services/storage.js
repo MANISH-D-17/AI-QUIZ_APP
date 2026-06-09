@@ -122,16 +122,28 @@ export function saveStats(stats) {
 }
 
 export function getProfile() {
-  const profile = localStorage.getItem(KEYS.PROFILE);
+  const profile = localStorage.getItem('profile');
   if (!profile) {
-    setJson(KEYS.PROFILE, DEFAULT_PROFILE);
-    return DEFAULT_PROFILE;
+    // If no real profile exists, fallback to empty/defaults, but keep the name blank so they are forced to login or it shows User
+    return {
+      name: 'User',
+      joinedDate: new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' }),
+      avatarInitials: 'U',
+      unlockedBadges: [],
+      lockedBadges: ['Speedster ⚡', 'Perfect Score 🏆', 'AI Explorer 🤖', 'Marathoner 🏃']
+    };
   }
-  return JSON.parse(profile);
+  
+  const parsed = JSON.parse(profile);
+  // Add some defaults for missing badge arrays if they aren't saved in localStorage
+  if (!parsed.unlockedBadges) parsed.unlockedBadges = [];
+  if (!parsed.lockedBadges) parsed.lockedBadges = ['Speedster ⚡', 'Perfect Score 🏆', 'AI Explorer 🤖', 'Marathoner 🏃'];
+  
+  return parsed;
 }
 
 export function saveProfile(profile) {
-  setJson(KEYS.PROFILE, profile);
+  localStorage.setItem('profile', JSON.stringify(profile));
 }
 
 function updateStatsOnNewAttempt(attempt) {

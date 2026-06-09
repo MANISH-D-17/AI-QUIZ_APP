@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const resultSchema = new mongoose.Schema({
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: false },
   userName: { type: String, default: "Alex" },
   quizId: { type: String, required: true },
   quizTitle: { type: String, required: true },

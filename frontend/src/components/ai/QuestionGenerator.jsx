@@ -52,7 +52,7 @@ export default function QuestionGenerator({ isOpen, onClose }) {
             <Cpu className="h-10 w-10 text-accent animate-spin-slow" />
             <Sparkles className="absolute -top-1 -right-1 h-5 w-5 text-purple-400 fill-purple-400 animate-bounce" />
           </div>
-          <h4 className="font-headings font-bold text-lg text-white mb-2 animate-pulse">
+          <h4 className="font-headings font-bold text-lg text-text mb-2 animate-pulse">
             ✦ AI is generating your quiz...
           </h4>
           <p className="text-xs text-text-muted max-w-xs leading-relaxed">
@@ -132,7 +132,7 @@ export default function QuestionGenerator({ isOpen, onClose }) {
           <div className="space-y-2">
             <div className="flex justify-between items-center text-xs font-bold text-text-muted uppercase tracking-wider">
               <span>3. Questions Count</span>
-              <span className="text-white bg-surface-2 px-2 py-0.5 rounded border border-border">{count} Qs</span>
+              <span className="text-text bg-surface-2 px-2 py-0.5 rounded border border-border">{count} Qs</span>
             </div>
             <div className="flex items-center space-x-4 pt-1">
               <span className="text-xs text-text-muted">3</span>
