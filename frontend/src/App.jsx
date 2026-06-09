@@ -14,6 +14,7 @@ import QuizResult from './pages/QuizResult';
 import Leaderboard from './pages/Leaderboard';
 import Profile from './pages/Profile';
 import Analytics from './pages/Analytics';
+import Login from './pages/Login';
 
 export default function App() {
   return (
@@ -47,7 +48,10 @@ export default function App() {
           <Route path="/quiz/:id" element={<QuizTake />} />
         </Route>
 
-        {/* C. WILDCARD FALLBACK */}
+        {/* C. STANDALONE PAGES */}
+        <Route path="/login" element={<Login />} />
+
+        {/* D. WILDCARD FALLBACK */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

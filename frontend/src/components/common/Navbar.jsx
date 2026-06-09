@@ -42,7 +42,7 @@ export default function Navbar() {
               <div className="bg-gradient-to-tr from-primary to-accent p-2 rounded-xl text-white shadow-lg group-hover:scale-110 transition-all duration-300">
                 <Flame className="h-6 w-6 animate-pulse" />
               </div>
-              <span className="font-headings font-bold text-xl tracking-tight text-white group-hover:text-primary transition-colors">
+              <span className="font-headings font-bold text-xl tracking-tight text-text group-hover:text-primary transition-colors">
                 Smart<span className="text-accent font-light">Prep</span>
               </span>
             </Link>
@@ -78,15 +78,12 @@ export default function Navbar() {
               <span>{stats.currentStreak} Day Streak</span>
             </div>
 
-            {/* Profile Avatar */}
-            <Link to="/profile" className="flex items-center space-x-3 group focus:outline-none">
-              <div className="h-10 w-10 rounded-full bg-gradient-to-tr from-accent to-primary p-[2px] shadow-md group-hover:rotate-12 transition-all duration-300">
-                <div className="h-full w-full rounded-full bg-surface-2 flex items-center justify-center border border-border">
-                  <span className="text-sm font-bold text-white tracking-wider">
-                    {profile.avatarInitials || 'AL'}
-                  </span>
-                </div>
-              </div>
+            {/* Login Button */}
+            <Link 
+              to="/login" 
+              className="px-5 py-2 bg-primary text-white font-semibold rounded-xl shadow-md shadow-primary/20 hover:bg-primary/90 transition-all hover:-translate-y-0.5 active:scale-95"
+            >
+              Log In
             </Link>
           </div>
 
@@ -131,21 +128,13 @@ export default function Navbar() {
               </Link>
             );
           })}
-          <div className="border-t border-border mt-4 pt-4 px-4 flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="h-10 w-10 rounded-full bg-gradient-to-tr from-accent to-primary p-[2px]">
-                <div className="h-full w-full rounded-full bg-surface-2 flex items-center justify-center">
-                  <span className="text-sm font-bold text-white">{profile.avatarInitials}</span>
-                </div>
-              </div>
-              <span className="font-semibold text-text">{profile.name}</span>
-            </div>
+          <div className="border-t border-border mt-4 pt-4 px-4 flex items-center justify-center">
             <Link
-              to="/profile"
+              to="/login"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-primary text-sm font-semibold hover:underline"
+              className="w-full text-center px-5 py-3 bg-primary text-white font-semibold rounded-xl shadow-md shadow-primary/20"
             >
-              View Profile
+              Log In
             </Link>
           </div>
         </div>

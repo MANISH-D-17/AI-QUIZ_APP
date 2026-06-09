@@ -5,16 +5,16 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #10B981;       /* Emerald green – success/CTA */
-  --color-secondary: #F59E0B;     /* Amber – warnings, difficulty */
-  --color-accent: #8B5CF6;        /* Purple – all AI features */
-  --color-bg: #0F172A;            /* Deep navy background */
-  --color-surface: #1E293B;       /* Card/surface background */
-  --color-surface-2: #334155;     /* Elevated surface */
-  --color-text: #F1F5F9;          /* Primary text */
-  --color-text-muted: #94A3B8;    /* Secondary text */
-  --color-border: #334155;        /* Subtle borders */
-  --color-danger: #EF4444;        /* Error/wrong answer */
+  --color-primary: #2563EB;       /* Blue 600 - Professional primary */
+  --color-secondary: #F59E0B;     /* Amber - Warnings/Highlights */
+  --color-accent: #6366F1;        /* Indigo 500 - AI Features */
+  --color-bg: #F8FAFC;            /* Slate 50 - Background */
+  --color-surface: #FFFFFF;       /* White - Cards/Surfaces */
+  --color-surface-2: #F1F5F9;     /* Slate 100 - Elevated surfaces */
+  --color-text: #0F172A;          /* Slate 900 - Primary text */
+  --color-text-muted: #64748B;    /* Slate 500 - Secondary text */
+  --color-border: #E2E8F0;        /* Slate 200 - Borders */
+  --color-danger: #EF4444;        /* Red 500 - Errors */
 }
 
 body {
