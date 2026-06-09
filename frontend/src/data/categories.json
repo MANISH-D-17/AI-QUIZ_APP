@@ -1,0 +1,46 @@
+[
+  {
+    "id": "Programming",
+    "name": "Programming",
+    "icon": "Code",
+    "color": "emerald",
+    "description": "Coding interviews, languages, and systems engineering",
+    "bgGradient": "from-emerald-500/20 to-teal-500/20",
+    "textClass": "text-emerald-400",
+    "borderClass": "border-emerald-500/30",
+    "accentColor": "#10B981"
+  },
+  {
+    "id": "History",
+    "name": "History",
+    "icon": "BookOpen",
+    "color": "amber",
+    "description": "World events, milestones, and prominent historical eras",
+    "bgGradient": "from-amber-500/20 to-orange-500/20",
+    "textClass": "text-amber-400",
+    "borderClass": "border-amber-500/30",
+    "accentColor": "#F59E0B"
+  },
+  {
+    "id": "Math",
+    "name": "Math",
+    "icon": "Calculator",
+    "color": "indigo",
+    "description": "Algebra, calculus, geometry, and numerical problems",
+    "bgGradient": "from-indigo-500/20 to-violet-500/20",
+    "textClass": "text-indigo-400",
+    "borderClass": "border-indigo-500/30",
+    "accentColor": "#6366F1"
+  },
+  {
+    "id": "Science",
+    "name": "Science",
+    "icon": "Atom",
+    "color": "cyan",
+    "description": "Physics, chemistry, human biology, and space exploration",
+    "bgGradient": "from-cyan-500/20 to-blue-500/20",
+    "textClass": "text-cyan-400",
+    "borderClass": "border-cyan-500/30",
+    "accentColor": "#06B6D4"
+  }
+]

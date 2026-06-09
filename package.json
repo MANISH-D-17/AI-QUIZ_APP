@@ -1,0 +1,15 @@
+{
+  "name": "quiz-fullstack",
+  "version": "1.0.0",
+  "description": "Full stack AI-powered quiz and analytics platform",
+  "private": true,
+  "scripts": {
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "server": "npm run dev --prefix backend",
+    "client": "npm run dev --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

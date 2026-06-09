@@ -1,0 +1,767 @@
+[
+  {
+    "id": "python-basics",
+    "title": "Python Basics",
+    "category": "Programming",
+    "difficulty": "Easy",
+    "duration": 600,
+    "questionsCount": 10,
+    "rating": 4.8,
+    "takenCount": 1420,
+    "description": "Master the fundamental syntax, data types, control flows, and basic concepts of Python programming.",
+    "questions": [
+      {
+        "id": "py-1",
+        "questionText": "What is the correct syntax to output 'Hello World' in Python?",
+        "options": [
+          "print('Hello World')",
+          "echo('Hello World')",
+          "console.log('Hello World')",
+          "System.out.println('Hello World')"
+        ],
+        "correctAnswer": 0,
+        "explanation": "In Python, the `print()` function is used to output text to the console. Unlike Javascript's `console.log` or Java's `System.out.println`, Python keeps it simple and direct.",
+        "topic": "Syntax",
+        "imageUrl": null
+      },
+      {
+        "id": "py-2",
+        "questionText": "Which of the following is NOT a valid variable name in Python?",
+        "options": [
+          "my_variable",
+          "myVariable",
+          "2myvariable",
+          "_my_variable"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In Python, variable names cannot start with a number. They must start with a letter or an underscore character.",
+        "topic": "Variables",
+        "imageUrl": null
+      },
+      {
+        "id": "py-3",
+        "questionText": "How do you start a multi-line comment in Python?",
+        "options": [
+          "// This is a comment",
+          "/* This is a comment */",
+          "\"\"\" This is a comment \"\"\"",
+          "# This is a comment"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Python does not have a specific multi-line comment syntax. However, you can use a multi-line string (triple double-quotes `\"\"\"`) that is not assigned to a variable, as Python ignores unassigned string literals.",
+        "topic": "Syntax",
+        "imageUrl": null
+      },
+      {
+        "id": "py-4",
+        "questionText": "What is the correct way to create a list in Python?",
+        "options": [
+          "my_list = (1, 2, 3)",
+          "my_list = [1, 2, 3]",
+          "my_list = {1, 2, 3}",
+          "my_list = list(1, 2, 3)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Lists in Python are defined using square brackets `[]`. Curly braces `{}` are for sets and dictionaries, and parentheses `()` are for tuples.",
+        "topic": "Data Structures",
+        "imageUrl": null
+      },
+      {
+        "id": "py-5",
+        "questionText": "Which operator is used for exponentiation (power) in Python?",
+        "options": [
+          "^",
+          "**",
+          "pow",
+          "^^"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The double asterisk `**` is the exponentiation operator in Python. For example, `2 ** 3` evaluates to `8`. The `^` operator is a bitwise XOR.",
+        "topic": "Operators",
+        "imageUrl": null
+      },
+      {
+        "id": "py-6",
+        "questionText": "Which list method is used to add an item to the end of a list?",
+        "options": [
+          "add()",
+          "insert()",
+          "append()",
+          "extend()"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The `append()` method adds a single element to the very end of a list. `insert()` adds at a specific index, while `extend()` merges another iterable into the list.",
+        "topic": "Data Structures",
+        "imageUrl": null
+      },
+      {
+        "id": "py-7",
+        "questionText": "What does the `len()` function return in Python?",
+        "options": [
+          "The maximum value of an iterable",
+          "The number of elements in an object",
+          "The byte size of a variable",
+          "The class type of a variable"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The built-in `len()` function returns the number of items (length) in an object, such as a list, string, dictionary, or tuple.",
+        "topic": "Functions",
+        "imageUrl": null
+      },
+      {
+        "id": "py-8",
+        "questionText": "How do you check the type of a variable in Python?",
+        "options": [
+          "typeof(variable)",
+          "variable.type()",
+          "type(variable)",
+          "isinstance(variable)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The `type()` function is used to return the class type of an object in Python. E.g., `type('hello')` returns `<class 'str'>`.",
+        "topic": "Functions",
+        "imageUrl": null
+      },
+      {
+        "id": "py-9",
+        "questionText": "Which keyword is used to define a function in Python?",
+        "options": [
+          "function",
+          "func",
+          "def",
+          "define"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Functions in Python are defined using the `def` keyword, followed by the function name, parentheses, and a colon.",
+        "topic": "Functions",
+        "imageUrl": null
+      },
+      {
+        "id": "py-10",
+        "questionText": "What is the result of `bool([])` in Python?",
+        "options": [
+          "True",
+          "False",
+          "TypeError",
+          "None"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In Python, empty sequences or collections (like empty lists `[]`, tuples, dicts, strings, etc.) evaluate to `False` in a boolean context. Thus, `bool([])` returns `False`.",
+        "topic": "Data Types",
+        "imageUrl": null
+      }
+    ]
+  },
+  {
+    "id": "world-war-ii",
+    "title": "World War II",
+    "category": "History",
+    "difficulty": "Medium",
+    "duration": 900,
+    "questionsCount": 10,
+    "rating": 4.6,
+    "takenCount": 980,
+    "description": "Test your historical knowledge of the global military conflict that lasted from 1939 to 1945.",
+    "questions": [
+      {
+        "id": "ww-1",
+        "questionText": "In which year did World War II officially begin?",
+        "options": [
+          "1918",
+          "1935",
+          "1939",
+          "1941"
+        ],
+        "correctAnswer": 2,
+        "explanation": "World War II officially began on September 1, 1939, when Nazi Germany invaded Poland, prompting Great Britain and France to declare war.",
+        "topic": "Timeline",
+        "imageUrl": null
+      },
+      {
+        "id": "ww-2",
+        "questionText": "Which country signed a non-aggression pact with Germany in August 1939?",
+        "options": [
+          "Soviet Union",
+          "Italy",
+          "Japan",
+          "France"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Molotov-Ribbentrop Pact was a non-aggression agreement signed between the Soviet Union (USSR) and Nazi Germany in August 1939. Germany later violated this pact in 1941.",
+        "topic": "Diplomacy",
+        "imageUrl": null
+      },
+      {
+        "id": "ww-3",
+        "questionText": "What event triggered the entry of the United States into World War II?",
+        "options": [
+          "The invasion of Poland",
+          "The bombing of Pearl Harbor",
+          "The Battle of Britain",
+          "The sinking of the Lusitania"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The surprise military strike by the Imperial Japanese Navy Air Service upon the United States against the naval base at Pearl Harbor in Honolulu, Territory of Hawaii, on December 7, 1941, led to the US declaration of war on Japan.",
+        "topic": "Key Events",
+        "imageUrl": null
+      },
+      {
+        "id": "ww-4",
+        "questionText": "Who was the Prime Minister of the United Kingdom during most of World War II?",
+        "options": [
+          "Neville Chamberlain",
+          "Clement Attlee",
+          "Winston Churchill",
+          "Anthony Eden"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Winston Churchill served as Prime Minister of the United Kingdom from 1940 to 1945, rallying the nation and leading it to victory alongside the Allies.",
+        "topic": "Leadership",
+        "imageUrl": null
+      },
+      {
+        "id": "ww-5",
+        "questionText": "What was the code name for the allied invasion of Normandy (D-Day)?",
+        "options": [
+          "Operation Barbarossa",
+          "Operation Overlord",
+          "Operation Sea Lion",
+          "Operation Torch"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Operation Overlord was the codename for the Battle of Normandy, which launched on June 6, 1944 (known as D-Day), beginning the liberation of German-occupied Western Europe.",
+        "topic": "Campaigns",
+        "imageUrl": null
+      },
+      {
+        "id": "ww-6",
+        "questionText": "Which major battle is widely considered the primary turning point of the war in the Pacific?",
+        "options": [
+          "Battle of Midway",
+          "Battle of Pearl Harbor",
+          "Battle of Iwo Jima",
+          "Battle of Okinawa"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Battle of Midway (June 1942) was a decisive naval battle in the Pacific Theater. The US Navy defeated an attacking fleet of the Imperial Japanese Navy, inflicting irreparable damage on the Japanese fleet.",
+        "topic": "Campaigns",
+        "imageUrl": null
+      },
+      {
+        "id": "ww-7",
+        "questionText": "Which city was the site of the first atomic bomb dropped in active warfare?",
+        "options": [
+          "Tokyo",
+          "Nagasaki",
+          "Hiroshima",
+          "Kyoto"
+        ],
+        "correctAnswer": 2,
+        "explanation": "On August 6, 1945, the United States dropped the first atomic bomb ('Little Boy') on the Japanese city of Hiroshima. A second bomb ('Fat Man') was dropped on Nagasaki three days later.",
+        "topic": "Key Events",
+        "imageUrl": null
+      },
+      {
+        "id": "ww-8",
+        "questionText": "Which three leaders met at the Yalta Conference in February 1945?",
+        "options": [
+          "Churchill, Roosevelt, Stalin",
+          "Chamberlain, Roosevelt, Stalin",
+          "Churchill, Truman, Stalin",
+          "Churchill, Roosevelt, Lenin"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Yalta Conference was attended by British PM Winston Churchill, US President Franklin D. Roosevelt, and Soviet Premier Joseph Stalin (often called the 'Big Three') to discuss the post-war reorganization of Germany and Europe.",
+        "topic": "Diplomacy",
+        "imageUrl": null
+      },
+      {
+        "id": "ww-9",
+        "questionText": "What was the German military tactic of 'lightning war' called?",
+        "options": [
+          "Luftwaffe",
+          "Wehrmacht",
+          "Blitzkrieg",
+          "Anschluss"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Blitzkrieg (German for 'lightning war') is a military tactic designed to create disorganization among enemy forces through the use of highly mobile, concentrated forces of tanks, infantry, and air power.",
+        "topic": "Tactics",
+        "imageUrl": null
+      },
+      {
+        "id": "ww-10",
+        "questionText": "In which month and year did Germany sign the unconditional surrender, ending the war in Europe?",
+        "options": [
+          "December 1941",
+          "June 1944",
+          "May 1945",
+          "September 1945"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Nazi Germany signed an unconditional surrender on May 8, 1945 (celebrated as V-E Day), ending hostilities in the European Theater. The war officially ended globally in September 1945 when Japan surrendered.",
+        "topic": "Timeline",
+        "imageUrl": null
+      }
+    ]
+  },
+  {
+    "id": "algebra-fundamentals",
+    "title": "Algebra Fundamentals",
+    "category": "Math",
+    "difficulty": "Medium",
+    "duration": 1200,
+    "questionsCount": 10,
+    "rating": 4.5,
+    "takenCount": 740,
+    "description": "Learn and practice algebra essentials, including linear equations, graphing, factoring, and quadratics.",
+    "questions": [
+      {
+        "id": "alg-1",
+        "questionText": "Solve for x in the equation: 3x - 7 = 14",
+        "options": [
+          "x = 5",
+          "x = 7",
+          "x = 3",
+          "x = 6"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Add 7 to both sides: `3x = 21`. Then, divide by 3: `x = 7`.",
+        "topic": "Linear Equations",
+        "imageUrl": null
+      },
+      {
+        "id": "alg-2",
+        "questionText": "What is the slope of the line given by the equation y = -4x + 9?",
+        "options": [
+          "9",
+          "4",
+          "-4",
+          "-4/9"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The equation is written in slope-intercept form (`y = mx + b`), where `m` is the slope. Thus, the slope is `-4`.",
+        "topic": "Linear Functions",
+        "imageUrl": null
+      },
+      {
+        "id": "alg-3",
+        "questionText": "Factor the quadratic expression: x² - 5x + 6",
+        "options": [
+          "(x - 2)(x - 3)",
+          "(x - 1)(x - 6)",
+          "(x + 2)(x + 3)",
+          "(x - 5)(x + 6)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "We need two numbers that multiply to 6 and add to -5. These numbers are -2 and -3. Thus, the factored form is `(x - 2)(x - 3)`.",
+        "topic": "Factoring",
+        "imageUrl": null
+      },
+      {
+        "id": "alg-4",
+        "questionText": "What is the value of 5⁰ (five to the power of zero)?",
+        "options": [
+          "0",
+          "5",
+          "1",
+          "Undefined"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Any non-zero real number raised to the power of zero is always equal to 1.",
+        "topic": "Exponents",
+        "imageUrl": null
+      },
+      {
+        "id": "alg-5",
+        "questionText": "If f(x) = 2x² - 3x + 1, what is f(-2)?",
+        "options": [
+          "-1",
+          "3",
+          "15",
+          "7"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Substitute x = -2 into the function: `f(-2) = 2(-2)² - 3(-2) + 1 = 2(4) + 6 + 1 = 8 + 6 + 1 = 15`.",
+        "topic": "Functions",
+        "imageUrl": null
+      },
+      {
+        "id": "alg-6",
+        "questionText": "Solve the inequality: -2x + 5 < 11",
+        "options": [
+          "x < -3",
+          "x > -3",
+          "x < 3",
+          "x > 3"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Subtract 5 from both sides: `-2x < 6`. When dividing or multiplying by a negative number, flip the inequality sign. Divide by -2: `x > -3`.",
+        "topic": "Inequalities",
+        "imageUrl": null
+      },
+      {
+        "id": "alg-7",
+        "questionText": "What is the discriminant of the quadratic equation x² + 4x + 4 = 0?",
+        "options": [
+          "16",
+          "8",
+          "0",
+          "-4"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The discriminant formula is `D = b² - 4ac`. Here, `a = 1, b = 4, c = 4`. So `D = 4² - 4(1)(4) = 16 - 16 = 0`. A discriminant of 0 means the equation has exactly one real root.",
+        "topic": "Quadratic Equations",
+        "imageUrl": null
+      },
+      {
+        "id": "alg-8",
+        "questionText": "Which formula represents the logarithmic equivalent of y = b^x?",
+        "options": [
+          "log_y(b) = x",
+          "log_x(y) = b",
+          "log_b(y) = x",
+          "log_b(x) = y"
+        ],
+        "correctAnswer": 2,
+        "explanation": "By definition, a logarithm is the exponent to which a base must be raised to yield a given number. Therefore, `y = b^x` is equivalent to `log_b(y) = x`.",
+        "topic": "Logarithms",
+        "imageUrl": null
+      },
+      {
+        "id": "alg-9",
+        "questionText": "Simplify the algebraic expression: 3(2x - 4) - 2(x + 5)",
+        "options": [
+          "4x - 22",
+          "4x - 2",
+          "4x + 2",
+          "4x - 7"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Distribute: `6x - 12 - 2x - 10`. Group like terms: `(6x - 2x) + (-12 - 10) = 4x - 22`.",
+        "topic": "Linear Equations",
+        "imageUrl": null
+      },
+      {
+        "id": "alg-10",
+        "questionText": "What are the roots of the equation x² - 9 = 0?",
+        "options": [
+          "x = 9 and x = -9",
+          "x = 3 only",
+          "x = 3 and x = -3",
+          "x = 4.5 and x = -4.5"
+        ],
+        "correctAnswer": 2,
+        "explanation": "We can rewrite the equation as `x² = 9`. Taking the square root of both sides gives `x = ±3`.",
+        "topic": "Quadratic Equations",
+        "imageUrl": null
+      }
+    ]
+  },
+  {
+    "id": "javascript-advanced",
+    "title": "JavaScript Advanced",
+    "category": "Programming",
+    "difficulty": "Hard",
+    "duration": 1500,
+    "questionsCount": 10,
+    "rating": 4.9,
+    "takenCount": 540,
+    "description": "Challenge yourself with deep JS questions: closures, event loop, scope chains, prototypes, and memory structures.",
+    "questions": [
+      {
+        "id": "js-1",
+        "questionText": "What is the primary mechanism of JavaScript's prototype inheritance?",
+        "options": [
+          "Copying properties from parent to child on initialization",
+          "Lookup path traversing the dynamic __proto__ link chain",
+          "Generating deep compiled classes using virtual environments",
+          "Scope binding via lexical variable captures"
+        ],
+        "correctAnswer": 1,
+        "explanation": "JavaScript uses prototypal inheritance. When a property is accessed, JS engine looks at the object, then up the prototype chain (`__proto__` references) until it is found or terminates at `null`.",
+        "topic": "Prototypes",
+        "imageUrl": null
+      },
+      {
+        "id": "js-2",
+        "questionText": "What will be printed to the console?\n\n```js\nconsole.log(typeof NaN);\n```",
+        "options": [
+          "'nan'",
+          "'undefined'",
+          "'number'",
+          "'object'"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Although its name stands for 'Not-a-Number', standard IEEE 754 floating-point specs classify `NaN` as a numeric type, so `typeof NaN` returns `'number'`.",
+        "topic": "Data Types",
+        "imageUrl": null
+      },
+      {
+        "id": "js-3",
+        "questionText": "What is the behavior of the following asynchronous script?\n\n```js\nsetTimeout(() => console.log('A'), 0);\nPromise.resolve().then(() => console.log('B'));\nconsole.log('C');\n```",
+        "options": [
+          "A -> B -> C",
+          "C -> A -> B",
+          "C -> B -> A",
+          "B -> C -> A"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Synchronous tasks run first (logging 'C'). Microtasks (Promise `then`) execute immediately after the current script stack clears but before the macrotasks (such as `setTimeout` timer callback execution). Therefore, B (microtask) prints before A (macrotask). Output is `C -> B -> A`.",
+        "topic": "Event Loop",
+        "imageUrl": null
+      },
+      {
+        "id": "js-4",
+        "questionText": "What is the consequence of declaring a variable inside a function without `var`, `let`, or `const` keywords under strict mode ('use strict')?",
+        "options": [
+          "It gets declared as an implicit global variable on the window object.",
+          "It raises a ReferenceError.",
+          "It is automatically scoped to the block like a let variable.",
+          "It executes successfully but is marked as undefined."
+        ],
+        "correctAnswer": 1,
+        "explanation": "In strict mode, assigning a value to an undeclared variable throws a `ReferenceError` to prevent developers from accidentally polluting the global scope.",
+        "topic": "Scope & Strict Mode",
+        "imageUrl": null
+      },
+      {
+        "id": "js-5",
+        "questionText": "What is a closure in JavaScript?",
+        "options": [
+          "A block statement wrapped inside parentheses to execute instantly",
+          "A function bundled together with references to its surrounding lexical environment",
+          "A method that destroys private variables to avoid memory leaks",
+          "An encryption protocol to secure local scripts"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives an inner function access to the outer function's scope even after the outer function has finished executing.",
+        "topic": "Closures",
+        "imageUrl": null
+      },
+      {
+        "id": "js-6",
+        "questionText": "How does `Object.freeze()` differ from `Object.seal()`?",
+        "options": [
+          "freeze allows editing existing values; seal does not",
+          "freeze prevents modifying existing values; seal allows modifying existing values",
+          "freeze blocks removing properties; seal allows removing properties",
+          "There is no functional difference between them"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Both prevent adding new properties. However, `Object.seal()` allows configuring or changing values of existing writable properties, whereas `Object.freeze()` makes all existing properties completely read-only.",
+        "topic": "Object Security",
+        "imageUrl": null
+      },
+      {
+        "id": "js-7",
+        "questionText": "What value will the following block return?\n\n```js\nconst obj = {\n  val: 42,\n  getVal: () => this.val\n};\nconsole.log(obj.getVal());\n```",
+        "options": [
+          "42",
+          "undefined",
+          "TypeError",
+          "ReferenceError"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Arrow functions do not have their own `this` binding. Instead, they capture `this` lexically from the enclosing execution context, which in this case is the global scope (where `window.val` or global `val` is undefined). Thus, it prints `undefined`.",
+        "topic": "This Bindings",
+        "imageUrl": null
+      },
+      {
+        "id": "js-8",
+        "questionText": "Which type of reference does a `WeakMap` maintain for its keys?",
+        "options": [
+          "Strong reference, preventing garbage collection",
+          "Weak reference, allowing keys to be garbage collected if no other reference exists",
+          "Static references saved in local cache databases",
+          "Encrypted indexes mapped to persistent arrays"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A `WeakMap` holds weak references to its keys, which must be objects. If there are no other references to the key object, it is cleared by garbage collection, preventing memory leaks.",
+        "topic": "Memory Structures",
+        "imageUrl": null
+      },
+      {
+        "id": "js-9",
+        "questionText": "What is the purpose of the `Symbol` primitive type in JavaScript?",
+        "options": [
+          "To serve as a high-performance hash code optimizer",
+          "To generate completely unique, immutable property keys to prevent property collisions",
+          "To create automatic syntax macros",
+          "To store localized character systems like emojis"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Symbols are primitive, unique, and immutable values. They are primarily used as keys for object properties to ensure they won't clash with keys added by other scripts (like mixins or third-party libraries).",
+        "topic": "Data Types",
+        "imageUrl": null
+      },
+      {
+        "id": "js-10",
+        "questionText": "What does hoisting refer to in JavaScript?",
+        "options": [
+          "The browser pulling external scripts before HTML parsing starts",
+          "V8 moving all code declarations to the top of execution context memory on compilation",
+          "Binding execution events to high-priority UI lists",
+          "Automated bundling of ES6 modules"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Hoisting is JavaScript's default behavior of moving variable and function declarations to the top of their containing scope during the compilation phase, before the code is executed.",
+        "topic": "Syntax",
+        "imageUrl": null
+      }
+    ]
+  },
+  {
+    "id": "human-biology",
+    "title": "Human Biology",
+    "category": "Science",
+    "difficulty": "Easy",
+    "duration": 600,
+    "questionsCount": 10,
+    "rating": 4.7,
+    "takenCount": 1150,
+    "description": "Test your fundamentals regarding the organs, systems, cells, and processes of the human body.",
+    "questions": [
+      {
+        "id": "bio-1",
+        "questionText": "Which organ in the human body is primarily responsible for filtering waste products from the bloodstream?",
+        "options": [
+          "Liver",
+          "Lungs",
+          "Kidneys",
+          "Spleen"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The kidneys are a pair of bean-shaped organs that filter blood to remove waste products and excess water, producing urine.",
+        "topic": "Organs",
+        "imageUrl": null
+      },
+      {
+        "id": "bio-2",
+        "questionText": "What is the primary function of red blood cells in the body?",
+        "options": [
+          "Fight bacterial infections",
+          "Transport oxygen from the lungs to the tissues",
+          "Initiate blood clotting at wound sites",
+          "Digest complex fats and sugars"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Red blood cells (erythrocytes) contain hemoglobin, a protein that binds to oxygen in the lungs and carries it to the rest of the body's cells.",
+        "topic": "Cardiovascular",
+        "imageUrl": null
+      },
+      {
+        "id": "bio-3",
+        "questionText": "Which part of the brain controls basic life support systems such as breathing and heart rate?",
+        "options": [
+          "Cerebrum",
+          "Cerebellum",
+          "Brainstem",
+          "Hypothalamus"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The brainstem (comprising the midbrain, pons, and medulla oblongata) controls autonomic, critical functions such as respiration, heartbeat, blood pressure, and swallowing.",
+        "topic": "Nervous System",
+        "imageUrl": null
+      },
+      {
+        "id": "bio-4",
+        "questionText": "What is the largest organ of the human body?",
+        "options": [
+          "Liver",
+          "Brain",
+          "Skin",
+          "Large Intestine"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The skin (integumentary system) is the largest organ in terms of both surface area and weight, protecting internal structures and regulating temperature.",
+        "topic": "Organs",
+        "imageUrl": null
+      },
+      {
+        "id": "bio-5",
+        "questionText": "Which gas is primarily expelled from the body when we exhale?",
+        "options": [
+          "Oxygen",
+          "Carbon Dioxide",
+          "Nitrogen",
+          "Carbon Monoxide"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Carbon dioxide (CO2) is a metabolic waste product generated by cells during cellular respiration, which is carried by blood to the lungs and expelled during exhalation.",
+        "topic": "Respiratory",
+        "imageUrl": null
+      },
+      {
+        "id": "bio-6",
+        "questionText": "What is the basic functional unit of the human nervous system?",
+        "options": [
+          "Nephron",
+          "Neuron",
+          "Alveolus",
+          "Osteocyte"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The neuron (nerve cell) is the fundamental structural and functional unit of the nervous system, designed to transmit electrochemical signals.",
+        "topic": "Nervous System",
+        "imageUrl": null
+      },
+      {
+        "id": "bio-7",
+        "questionText": "Where are red blood cells produced in the adult human body?",
+        "options": [
+          "Bone marrow",
+          "Lymph nodes",
+          "Heart",
+          "Liver"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Red blood cells (along with white blood cells and platelets) are produced through hematopoiesis in the red bone marrow, mostly inside flat bones like the pelvis and sternum.",
+        "topic": "Skeletal",
+        "imageUrl": null
+      },
+      {
+        "id": "bio-8",
+        "questionText": "Which hormone regulates sugar levels in the blood?",
+        "options": [
+          "Adrenaline",
+          "Thyroxine",
+          "Insulin",
+          "Melatonin"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Insulin, secreted by the beta cells of the pancreas, helps glucose enter cells from the bloodstream, thereby lowering blood sugar levels.",
+        "topic": "Endocrine",
+        "imageUrl": null
+      },
+      {
+        "id": "bio-9",
+        "questionText": "What cellular organelle is nicknamed 'the powerhouse of the cell'?",
+        "options": [
+          "Nucleus",
+          "Ribosome",
+          "Mitochondrion",
+          "Golgi Apparatus"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Mitochondria are double-membraned organelles responsible for aerobic respiration and producing adenosine triphosphate (ATP), the chemical energy currency of the cell.",
+        "topic": "Cell Biology",
+        "imageUrl": null
+      },
+      {
+        "id": "bio-10",
+        "questionText": "How many bones are in a typical adult human skeleton?",
+        "options": [
+          "106",
+          "206",
+          "306",
+          "406"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A typical adult human skeleton consists of 206 bones. Infants are born with around 270 bones, many of which fuse together during growth and development.",
+        "topic": "Skeletal",
+        "imageUrl": null
+      }
+    ]
+  }
+]
