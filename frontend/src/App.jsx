@@ -33,9 +33,12 @@ export default function App() {
       />
 
       <Routes>
-        {/* A. EXPLORATION ROUTES (using standard Navbar/Footer Layout) */}
+        {/* A. STANDALONE PAGES */}
+        <Route path="/" element={<Login />} />
+        
+        {/* B. EXPLORATION ROUTES (using standard Navbar/Footer Layout) */}
         <Route element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Home />} />
           <Route path="/quizzes" element={<QuizList />} />
           <Route path="/result/:id" element={<QuizResult />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
@@ -43,13 +46,10 @@ export default function App() {
           <Route path="/analytics" element={<Analytics />} />
         </Route>
 
-        {/* B. DISTRACTION-FREE ACTIVE QUIZ ROUTE (no headers/footers) */}
+        {/* C. DISTRACTION-FREE ACTIVE QUIZ ROUTE (no headers/footers) */}
         <Route element={<QuizLayout />}>
           <Route path="/quiz/:id" element={<QuizTake />} />
         </Route>
-
-        {/* C. STANDALONE PAGES */}
-        <Route path="/login" element={<Login />} />
 
         {/* D. WILDCARD FALLBACK */}
         <Route path="*" element={<Navigate to="/" replace />} />

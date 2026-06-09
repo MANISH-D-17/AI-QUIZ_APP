@@ -32,12 +32,14 @@ const connectDB = async () => {
 const quizRoutes = require("./routes/quizRoutes");
 const resultRoutes = require("./routes/resultRoutes");
 const aiRoutes = require("./routes/aiRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 app.use("/api/quiz", quizRoutes);
 app.use("/api/quizzes", quizRoutes); // Plural compatibility alias
 app.use("/api/result", resultRoutes);
 app.use("/api/results", resultRoutes); // Plural compatibility alias
 app.use("/api/ai", aiRoutes);
+app.use("/api/auth", authRoutes);
 
 // Base server endpoint
 app.get("/", (req, res) => {

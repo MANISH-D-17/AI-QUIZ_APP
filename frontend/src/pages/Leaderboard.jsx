@@ -120,7 +120,7 @@ export default function Leaderboard() {
       {/* 1. Header Title */}
       <div className="pb-4 border-b border-border/40 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-headings font-bold text-white tracking-tight flex items-center">
+          <h1 className="text-3xl font-headings font-bold text-text tracking-tight flex items-center">
             <Trophy className="h-8 w-8 text-amber-400 mr-3 animate-pulse" />
             Global Rankings
           </h1>
@@ -139,7 +139,7 @@ export default function Leaderboard() {
             onClick={() => setActiveTab('global')}
             className={`flex-1 md:flex-initial flex items-center justify-center space-x-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-200 ${
               activeTab === 'global'
-                ? 'bg-surface-2 text-white shadow-md'
+                ? 'bg-surface-2 text-text shadow-md'
                 : 'text-text-muted hover:text-text'
             }`}
           >
@@ -151,7 +151,7 @@ export default function Leaderboard() {
             onClick={() => setActiveTab('weekly')}
             className={`flex-1 md:flex-initial flex items-center justify-center space-x-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-200 ${
               activeTab === 'weekly'
-                ? 'bg-surface-2 text-white shadow-md'
+                ? 'bg-surface-2 text-text shadow-md'
                 : 'text-text-muted hover:text-text'
             }`}
           >
@@ -175,7 +175,7 @@ export default function Leaderboard() {
           <select
             value={selectedQuizId}
             onChange={(e) => setSelectedQuizId(e.target.value)}
-            className="w-full md:w-48 bg-surface border border-border text-white text-xs rounded-xl px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all font-bold"
+            className="w-full md:w-48 bg-surface border border-border text-text text-xs rounded-xl px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all font-bold"
           >
             <option value="all">All Quizzes Combined</option>
             {quizzesData.map(q => (
@@ -227,11 +227,11 @@ export default function Leaderboard() {
                     <td className="py-4 px-6">
                       <div className="flex items-center space-x-3">
                         <div className={`h-9 w-9 rounded-full ${user.bg} flex items-center justify-center border border-border shadow-md`}>
-                          <span className="text-xs font-bold text-white uppercase tracking-wider">
+                          <span className="text-xs font-bold text-text uppercase tracking-wider">
                             {user.initials}
                           </span>
                         </div>
-                        <span className={`text-sm ${user.isUser ? 'text-primary' : 'text-white font-semibold'}`}>
+                        <span className={`text-sm ${user.isUser ? 'text-primary' : 'text-text font-semibold'}`}>
                           {user.username}
                         </span>
                       </div>

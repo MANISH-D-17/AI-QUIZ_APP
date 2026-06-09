@@ -111,7 +111,7 @@ export default function QuizList() {
       {/* Page Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-border/40">
         <div>
-          <h1 className="text-3xl font-headings font-bold text-white tracking-tight">
+          <h1 className="text-3xl font-headings font-bold text-text tracking-tight">
             Browse Quizzes
           </h1>
           <p className="text-sm text-text-muted">
@@ -134,7 +134,7 @@ export default function QuizList() {
         {/* 1. Filter Sidebar (Desktop) / Hidden on Mobile */}
         <aside className="hidden lg:block w-64 flex-shrink-0 space-y-6">
           <div className="bg-surface border border-border rounded-2xl p-5 space-y-6 shadow-xl sticky top-24">
-            <div className="flex items-center justify-between pb-3 border-b border-border/40 text-sm font-bold text-white">
+            <div className="flex items-center justify-between pb-3 border-b border-border/40 text-sm font-bold text-text">
               <span className="flex items-center"><SlidersHorizontal className="h-4 w-4 mr-2 text-primary" />Filters</span>
               {hasActiveFilters && (
                 <button 
@@ -152,7 +152,7 @@ export default function QuizList() {
               <select
                 value={filters.category}
                 onChange={(e) => setFilters(prev => ({ ...prev, category: e.target.value }))}
-                className="w-full bg-surface-2/40 border border-border text-white text-sm rounded-xl px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all"
+                className="w-full bg-surface-2/40 border border-border text-text text-sm rounded-xl px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all"
               >
                 <option value="All">All Categories</option>
                 {categoriesData.map(c => (
@@ -226,7 +226,7 @@ export default function QuizList() {
                 value={filters.searchQuery}
                 onChange={(e) => setFilters(prev => ({ ...prev, searchQuery: e.target.value }))}
                 placeholder="Search catalog title, skills..."
-                className="w-full bg-surface-2/40 border border-border rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary/40 shadow-inner"
+                className="w-full bg-surface-2/40 border border-border rounded-xl pl-10 pr-4 py-2.5 text-sm text-text placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary/40 shadow-inner"
               />
             </div>
 
@@ -246,7 +246,7 @@ export default function QuizList() {
                 <select
                   value={filters.sortBy}
                   onChange={(e) => setFilters(prev => ({ ...prev, sortBy: e.target.value }))}
-                  className="bg-surface-2/40 border border-border text-white text-xs rounded-xl px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all font-bold"
+                  className="bg-surface-2/40 border border-border text-text text-xs rounded-xl px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all font-bold"
                 >
                   <option value="Popular">Most Taken</option>
                   <option value="Highest Rated">Highest Rated</option>
@@ -312,7 +312,7 @@ export default function QuizList() {
               <div className="h-16 w-16 bg-surface-2 rounded-full border border-border flex items-center justify-center mx-auto text-text-muted shadow-lg">
                 <SlidersHorizontal className="h-8 w-8" />
               </div>
-              <h3 className="font-headings font-bold text-lg text-white">No quizzes found</h3>
+              <h3 className="font-headings font-bold text-lg text-text">No quizzes found</h3>
               <p className="text-sm text-text-muted leading-relaxed">
                 No active results match your search keywords or filter conditions. Try adjusting selectors, clearing filters, or compiling a custom quiz!
               </p>
@@ -334,7 +334,7 @@ export default function QuizList() {
           
           <div className="bg-surface border-t border-border rounded-t-3xl w-full max-h-[85vh] overflow-y-auto p-6 z-10 space-y-6 shadow-2xl relative animate-page">
             <div className="flex items-center justify-between pb-3 border-b border-border/80">
-              <span className="font-headings font-bold text-base text-white">Adjust Filter Conditions</span>
+              <span className="font-headings font-bold text-base text-text">Adjust Filter Conditions</span>
               <button onClick={() => setMobileSidebarOpen(false)} className="text-text-muted hover:text-white p-1 rounded-lg">
                 <X className="h-5 w-5" />
               </button>
@@ -346,7 +346,7 @@ export default function QuizList() {
               <select
                 value={filters.category}
                 onChange={(e) => setFilters(prev => ({ ...prev, category: e.target.value }))}
-                className="w-full bg-surface-2/60 border border-border text-white text-sm rounded-xl px-3 py-3"
+                className="w-full bg-surface-2/60 border border-border text-text text-sm rounded-xl px-3 py-3"
               >
                 <option value="All">All Categories</option>
                 {categoriesData.map(c => (

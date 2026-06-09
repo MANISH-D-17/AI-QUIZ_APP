@@ -3,12 +3,19 @@ const API_BASE = import.meta.env.VITE_API_URL || "/api";
 // Helper for standard HTTP request wrapper
 const apiRequest = async (url, options = {}) => {
   try {
+    const token = localStorage.getItem("token");
+    const headers = {
+      "Content-Type": "application/json",
+      ...options.headers
+    };
+    
+    if (token) {
+      headers["Authorization"] = `Bearer ${token}`;
+    }
+
     const response = await fetch(url, {
-      headers: {
-        "Content-Type": "application/json",
-        ...options.headers
-      },
-      ...options
+      ...options,
+      headers
     });
 
     const result = await response.json();
@@ -73,5 +80,21 @@ export const generateAIQuiz = async (topic, difficulty, count) => {
   return apiRequest(`${API_BASE}/ai/generate`, {
     method: "POST",
     body: JSON.stringify({ topic, difficulty, count })
+  });
+};
+
+// POST register a new user
+export const registerUser = async (userData) => {
+  return apiRequest(`${API_BASE}/auth/register`, {
+    method: "POST",
+    body: JSON.stringify(userData)
+  });
+};
+
+// POST login user
+export const loginUser = async (userData) => {
+  return apiRequest(`${API_BASE}/auth/login`, {
+    method: "POST",
+    body: JSON.stringify(userData)
   });
 };

@@ -23,7 +23,7 @@ export default function Navbar() {
   }, [location.pathname]);
 
   const navLinks = [
-    { name: 'Dashboard', path: '/', icon: LayoutDashboard },
+    { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
     { name: 'Quizzes', path: '/quizzes', icon: Compass },
     { name: 'Analytics', path: '/analytics', icon: BarChart3 },
     { name: 'Leaderboard', path: '/leaderboard', icon: Trophy },
@@ -38,7 +38,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo Branding */}
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2 group">
+            <Link to="/dashboard" className="flex items-center space-x-2 group">
               <div className="bg-gradient-to-tr from-primary to-accent p-2 rounded-xl text-white shadow-lg group-hover:scale-110 transition-all duration-300">
                 <Flame className="h-6 w-6 animate-pulse" />
               </div>

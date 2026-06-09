@@ -165,7 +165,7 @@ export default function QuizResult() {
             />
           </svg>
           <div className="absolute flex flex-col items-center justify-center">
-            <span className="text-3xl md:text-4xl font-extrabold text-white font-mono">{attempt.score}%</span>
+            <span className="text-3xl md:text-4xl font-extrabold text-text font-mono">{attempt.score}%</span>
             <span className="text-[10px] md:text-xs text-text-muted font-bold uppercase tracking-wider">Score</span>
           </div>
         </div>
@@ -176,7 +176,7 @@ export default function QuizResult() {
             <span className={`inline-flex items-center text-sm font-extrabold px-3 py-1 rounded-full border ${gradeInfo.colorClass}`}>
               Grade {gradeInfo.grade}
             </span>
-            <h2 className="text-2xl font-headings font-bold text-white">
+            <h2 className="text-2xl font-headings font-bold text-text">
               {gradeInfo.message}
             </h2>
           </div>
@@ -208,7 +208,7 @@ export default function QuizResult() {
         
         {/* Left: Progress Bars by Topic */}
         <div className="bg-surface border border-border rounded-2xl p-6 shadow-xl space-y-6">
-          <h3 className="text-lg font-headings font-bold text-white tracking-wider uppercase pb-3 border-b border-border/40">
+          <h3 className="text-lg font-headings font-bold text-text tracking-wider uppercase pb-3 border-b border-border/40">
             Concept Mastery Breakdown
           </h3>
           <ResultChart data={topicStats} type="bar" />
@@ -217,7 +217,7 @@ export default function QuizResult() {
         {/* Right: Topic breakdowns details & CTA */}
         <div className="bg-surface border border-border rounded-2xl p-6 shadow-xl space-y-6 flex flex-col justify-between">
           <div className="space-y-4">
-            <h3 className="text-lg font-headings font-bold text-white tracking-wider uppercase pb-3 border-b border-border/40">
+            <h3 className="text-lg font-headings font-bold text-text tracking-wider uppercase pb-3 border-b border-border/40">
               Diagnostic Gap Analysis
             </h3>
             <TopicBreakdown topicsData={topicStats} />
@@ -235,7 +235,7 @@ export default function QuizResult() {
 
       {/* 3. QUESTION REVIEW LEDGER TABLE */}
       <div className="space-y-6">
-        <h3 className="text-xl font-headings font-bold text-white">
+        <h3 className="text-xl font-headings font-bold text-text">
           Question-by-Question Review
         </h3>
 
@@ -266,7 +266,7 @@ export default function QuizResult() {
                     <span className="text-xs font-extrabold text-text-muted uppercase tracking-wider bg-surface-2 px-2.5 py-1 rounded">
                       Q {idx + 1}
                     </span>
-                    <span className="font-bold text-sm text-white truncate flex-1">
+                    <span className="font-bold text-sm text-text truncate flex-1">
                       {question.questionText}
                     </span>
                   </div>
@@ -316,7 +316,7 @@ export default function QuizResult() {
       <div className="bg-surface border border-border p-5 rounded-2xl flex flex-wrap items-center justify-between gap-4 shadow-xl">
         <Link
           to="/"
-          className="flex items-center justify-center space-x-1.5 border border-border px-5 py-3 rounded-xl text-xs font-bold text-text-muted hover:text-white hover:bg-surface-2/40 transition-all"
+          className="flex items-center justify-center space-x-1.5 border border-border px-5 py-3 rounded-xl text-xs font-bold text-text-muted hover:text-text hover:bg-surface-2/40 transition-all"
         >
           <Home className="h-4 w-4" />
           <span>Dashboard</span>
@@ -326,7 +326,7 @@ export default function QuizResult() {
           {/* Share score */}
           <button
             onClick={handleShare}
-            className="flex-1 sm:flex-initial flex items-center justify-center space-x-1.5 bg-surface-2 border border-border px-5 py-3 rounded-xl text-xs font-bold text-white hover:bg-surface-2/80 active:scale-95 transition-all"
+            className="flex-1 sm:flex-initial flex items-center justify-center space-x-1.5 bg-surface-2 border border-border px-5 py-3 rounded-xl text-xs font-bold text-text hover:bg-surface-2/80 active:scale-95 transition-all"
           >
             <Share2 className="h-4 w-4 text-accent" />
             <span>Share Score</span>

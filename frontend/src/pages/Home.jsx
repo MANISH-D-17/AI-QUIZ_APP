@@ -179,7 +179,7 @@ export default function Home() {
             <Calendar className="h-4 w-4 text-primary" />
             <span>{todayStr}</span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-headings font-bold text-white tracking-tight">
+          <h1 className="text-3xl md:text-4xl font-headings font-bold text-text tracking-tight">
             Welcome back, {profile.name} 👋
           </h1>
         </div>
@@ -203,16 +203,16 @@ export default function Home() {
               </div>
             </div>
 
-            <h2 className="text-2xl md:text-3xl font-headings font-bold text-white leading-tight">
+            <h2 className="text-2xl md:text-3xl font-headings font-bold text-text leading-tight">
               World War II Strategic Review
             </h2>
             <p className="text-sm md:text-base text-text-muted leading-relaxed">
               Test your understanding of World War II military tactics, leadership figures, and major global campaigns. Earn double history masterpoints and keep your streak hot!
             </p>
             <div className="flex items-center space-x-4 text-xs font-semibold text-text-muted">
-              <span>Category: <strong className="text-white">History</strong></span>
+              <span>Category: <strong className="text-text">History</strong></span>
               <span>•</span>
-              <span>Estimated Time: <strong className="text-white">15 Mins</strong></span>
+              <span>Estimated Time: <strong className="text-text">15 Mins</strong></span>
               <span>•</span>
               <span>10 Questions</span>
             </div>
@@ -240,7 +240,7 @@ export default function Home() {
             <BookOpen className="h-6 w-6" />
           </div>
           <div>
-            <h4 className="text-2xl font-bold text-white">{stats.totalTaken}</h4>
+            <h4 className="text-2xl font-bold text-text">{stats.totalTaken}</h4>
             <span className="text-xs text-text-muted font-semibold uppercase tracking-wider">Quizzes Taken</span>
           </div>
         </div>
@@ -250,7 +250,7 @@ export default function Home() {
             <Percent className="h-6 w-6" />
           </div>
           <div>
-            <h4 className="text-2xl font-bold text-white">{stats.avgScore}%</h4>
+            <h4 className="text-2xl font-bold text-text">{stats.avgScore}%</h4>
             <span className="text-xs text-text-muted font-semibold uppercase tracking-wider">Average Score</span>
           </div>
         </div>
@@ -260,7 +260,7 @@ export default function Home() {
             <Clock className="h-6 w-6" />
           </div>
           <div>
-            <h4 className="text-2xl font-bold text-white">{totalHours} hrs</h4>
+            <h4 className="text-2xl font-bold text-text">{totalHours} hrs</h4>
             <span className="text-xs text-text-muted font-semibold uppercase tracking-wider">Duration Spent</span>
           </div>
         </div>
@@ -270,7 +270,7 @@ export default function Home() {
             <Flame className="h-6 w-6 fill-secondary" />
           </div>
           <div>
-            <h4 className="text-2xl font-bold text-white">{stats.currentStreak} days</h4>
+            <h4 className="text-2xl font-bold text-text">{stats.currentStreak} days</h4>
             <span className="text-xs text-text-muted font-semibold uppercase tracking-wider">Current Streak</span>
           </div>
         </div>
@@ -280,7 +280,7 @@ export default function Home() {
       {recommendedQuizzes.length > 0 && (
         <div className="space-y-6">
           <div className="flex items-center space-x-3">
-            <h3 className="text-xl md:text-2xl font-headings font-bold text-white">
+            <h3 className="text-xl md:text-2xl font-headings font-bold text-text">
               Recommended For You
             </h3>
             <Badge type="ai" value="✦ AI Picks" />
@@ -296,7 +296,7 @@ export default function Home() {
       {/* 5. Available Quizzes Grid */}
       <div className="space-y-6">
         <div className="flex justify-between items-center">
-          <h3 className="text-xl md:text-2xl font-headings font-bold text-white">
+          <h3 className="text-xl md:text-2xl font-headings font-bold text-text">
             Explore All Quizzes
           </h3>
           <Link
@@ -317,7 +317,7 @@ export default function Home() {
       {/* 6. Recent Attempts Table */}
       {attempts.length > 0 && (
         <div className="space-y-4">
-          <h3 className="text-xl md:text-2xl font-headings font-bold text-white">
+          <h3 className="text-xl md:text-2xl font-headings font-bold text-text">
             Recent Activity
           </h3>
           <div className="bg-surface border border-border rounded-2xl overflow-hidden shadow-xl">
@@ -349,7 +349,7 @@ export default function Home() {
 
                     return (
                       <tr key={att._id || att.id} className="hover:bg-surface-2/20 transition-colors">
-                        <td className="py-4 px-6 font-bold text-white">{att.quizTitle}</td>
+                        <td className="py-4 px-6 font-bold text-text">{att.quizTitle}</td>
                         <td className="py-4 px-6 text-center">
                           <span className={`inline-flex items-center text-xs font-bold px-3 py-1 rounded-full border ${scoreColor}`}>
                             {att.score}%

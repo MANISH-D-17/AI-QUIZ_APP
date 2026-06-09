@@ -86,7 +86,7 @@ export default function Analytics() {
     <div className="space-y-10 animate-page pb-12">
       {/* 1. Header Title */}
       <div className="pb-4 border-b border-border/40">
-        <h1 className="text-3xl font-headings font-bold text-white tracking-tight flex items-center">
+        <h1 className="text-3xl font-headings font-bold text-text tracking-tight flex items-center">
           <BarChart3 className="h-8 w-8 text-primary mr-3" />
           Analytics Dashboard
         </h1>
@@ -103,7 +103,7 @@ export default function Analytics() {
             <BookOpen className="h-6 w-6" />
           </div>
           <div>
-            <h4 className="text-2xl font-bold text-white">{data.totalQuizzes}</h4>
+            <h4 className="text-2xl font-bold text-text">{data.totalQuizzes}</h4>
             <span className="text-xs text-text-muted font-semibold uppercase tracking-wider">Total Quizzes</span>
           </div>
         </div>
@@ -114,7 +114,7 @@ export default function Analytics() {
             <Percent className="h-6 w-6" />
           </div>
           <div>
-            <h4 className="text-2xl font-bold text-white">{data.averageScore}%</h4>
+            <h4 className="text-2xl font-bold text-text">{data.averageScore}%</h4>
             <span className="text-xs text-text-muted font-semibold uppercase tracking-wider">Average Score</span>
           </div>
         </div>
@@ -125,7 +125,7 @@ export default function Analytics() {
             <Trophy className="h-6 w-6 fill-secondary" />
           </div>
           <div>
-            <h4 className="text-2xl font-bold text-white">{data.bestScore}%</h4>
+            <h4 className="text-2xl font-bold text-text">{data.bestScore}%</h4>
             <span className="text-xs text-text-muted font-semibold uppercase tracking-wider">Best Score</span>
           </div>
         </div>
@@ -136,7 +136,7 @@ export default function Analytics() {
             <TrendingUp className="h-6 w-6" />
           </div>
           <div>
-            <h4 className="text-2xl font-bold text-white">{data.worstScore}%</h4>
+            <h4 className="text-2xl font-bold text-text">{data.worstScore}%</h4>
             <span className="text-xs text-text-muted font-semibold uppercase tracking-wider">Lowest Score</span>
           </div>
         </div>
@@ -145,7 +145,7 @@ export default function Analytics() {
       {/* 3. Recharts Score Progression Curve */}
       {chartData.length > 0 ? (
         <div className="bg-surface border border-border rounded-3xl p-6 shadow-2xl relative overflow-hidden">
-          <h3 className="text-lg font-headings font-bold text-white tracking-wider uppercase mb-6 flex items-center">
+          <h3 className="text-lg font-headings font-bold text-text tracking-wider uppercase mb-6 flex items-center">
             <LineIcon className="h-5 w-5 text-accent mr-2" />
             Accuracy Progression Trend
           </h3>
@@ -181,7 +181,7 @@ export default function Analytics() {
         
         {/* Left: Attempt Progress Bars */}
         <div className="bg-surface border border-border rounded-2xl p-6 shadow-xl space-y-6">
-          <h3 className="text-lg font-headings font-bold text-white tracking-wider uppercase pb-3 border-b border-border/40">
+          <h3 className="text-lg font-headings font-bold text-text tracking-wider uppercase pb-3 border-b border-border/40">
             Attempts Performance
           </h3>
           {data.history.length > 0 ? (
@@ -192,7 +192,7 @@ export default function Analytics() {
                   className="bg-surface-2/20 border border-border/60 p-4 rounded-xl space-y-3 border-l-4 border-l-primary hover:border-border transition-colors"
                 >
                   <div className="flex justify-between items-center text-sm">
-                    <span className="font-bold text-white truncate max-w-[200px]">{item.quizTitle}</span>
+                    <span className="font-bold text-text truncate max-w-[200px]">{item.quizTitle}</span>
                     <span className="text-primary font-bold font-mono">{item.score}%</span>
                   </div>
                   <div className="h-2 w-full bg-surface-2 rounded-full overflow-hidden">
@@ -217,7 +217,7 @@ export default function Analytics() {
 
         {/* Right: Badges Earned */}
         <div className="bg-surface border border-border rounded-2xl p-6 shadow-xl space-y-6">
-          <h3 className="text-lg font-headings font-bold text-white tracking-wider uppercase pb-3 border-b border-border/40 flex items-center">
+          <h3 className="text-lg font-headings font-bold text-text tracking-wider uppercase pb-3 border-b border-border/40 flex items-center">
             <Award className="h-5 w-5 text-primary mr-2" />
             Badges Earned
           </h3>
@@ -230,7 +230,7 @@ export default function Analytics() {
                 >
                   <span className="text-3xl select-none">{badge.emoji}</span>
                   <div className="space-y-1">
-                    <h5 className="font-bold text-sm text-white">{badge.name}</h5>
+                    <h5 className="font-bold text-sm text-text">{badge.name}</h5>
                     <p className="text-xs text-text-muted leading-relaxed">{badge.desc}</p>
                   </div>
                 </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BookOpen, Mail, Lock, ArrowRight } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { loginUser, registerUser } from '../../services/api';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -11,19 +12,43 @@ export default function Login() {
     password: '',
     name: ''
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Mock Authentication
-    toast.success(isLogin ? 'Successfully logged in!' : 'Account created successfully!');
-    // Navigate to dashboard/quizzes after mock login
-    setTimeout(() => {
-      navigate('/quizzes');
-    }, 1000);
+    setLoading(true);
+    
+    try {
+      let res;
+      if (isLogin) {
+        res = await loginUser({ email: formData.email, password: formData.password });
+        toast.success(`Welcome back, ${res.data.name}!`);
+      } else {
+        res = await registerUser(formData);
+        toast.success('Account created successfully!');
+      }
+      
+      // Save token and profile data
+      localStorage.setItem('token', res.data.token);
+      localStorage.setItem('profile', JSON.stringify({
+        name: res.data.name,
+        email: res.data.email,
+        avatarInitials: res.data.name.substring(0, 2).toUpperCase()
+      }));
+      
+      // Dispatch profile update event for Navbar
+      window.dispatchEvent(new Event('profile-updated'));
+
+      navigate('/dashboard');
+    } catch (err) {
+      toast.error(err.message || 'Authentication failed. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
