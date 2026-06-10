@@ -96,7 +96,7 @@ export default function Home() {
           totalTaken,
           avgScore,
           totalTime,
-          currentStreak: currentStreak || 4 // Fallback matching initial mock streak
+          currentStreak: currentStreak || 0
         });
 
         // AI Recommendation Logic (Weak Topics / Gap Analysis)
