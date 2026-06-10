@@ -231,19 +231,19 @@ export default function QuizTake() {
                   navigate('/quizzes');
                 }
               }}
-              className="text-text-muted hover:text-white p-1 hover:bg-surface-2 rounded-xl transition-all"
+              className="text-text-muted hover:text-text p-1 hover:bg-surface-2 rounded-xl transition-all"
               aria-label="Exit quiz taking"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
-            <h2 className="font-headings font-bold text-sm sm:text-base text-white truncate pr-2">
+            <h2 className="font-headings font-bold text-sm sm:text-base text-text truncate pr-2">
               {quiz.title}
             </h2>
           </div>
 
           {/* Question Indicator */}
           <div className="hidden sm:block text-xs font-bold text-text-muted bg-surface-2/40 px-3 py-1.5 rounded-full border border-border">
-            Question <span className="text-white">{currentIdx + 1}</span> of {quiz.questions.length}
+            Question <span className="text-text">{currentIdx + 1}</span> of {quiz.questions.length}
           </div>
 
           {/* Timer element */}
@@ -276,7 +276,7 @@ export default function QuizTake() {
             <button
               onClick={handlePrev}
               disabled={currentIdx === 0}
-              className="flex items-center space-x-1.5 border border-border px-5 py-3 rounded-xl text-xs font-bold text-text-muted hover:text-white hover:bg-surface-2/40 active:scale-95 disabled:opacity-30 disabled:pointer-events-none transition-all"
+              className="flex items-center space-x-1.5 border border-border px-5 py-3 rounded-xl text-xs font-bold text-text-muted hover:text-text hover:bg-surface-2/40 active:scale-95 disabled:opacity-30 disabled:pointer-events-none transition-all"
             >
               <ChevronLeft className="h-4 w-4" />
               <span>Previous</span>
@@ -285,7 +285,7 @@ export default function QuizTake() {
             {/* Mobile/Toggle palette trigger */}
             <button
               onClick={() => setPaletteDrawerOpen(true)}
-              className="lg:hidden bg-surface-2 border border-border px-4 py-3 rounded-xl text-xs font-bold text-white"
+              className="lg:hidden bg-surface-2 border border-border px-4 py-3 rounded-xl text-xs font-bold text-text"
             >
               Question Map
             </button>
@@ -301,7 +301,7 @@ export default function QuizTake() {
             ) : (
               <button
                 onClick={handleNext}
-                className="flex items-center space-x-1.5 bg-surface-2 border border-border px-5 py-3 rounded-xl text-xs font-bold text-white hover:bg-surface-2/80 hover:border-text-muted active:scale-95 transition-all"
+                className="flex items-center space-x-1.5 bg-surface-2 border border-border px-5 py-3 rounded-xl text-xs font-bold text-text hover:bg-surface-2/80 hover:border-text-muted active:scale-95 transition-all"
               >
                 <span>Next</span>
                 <ChevronRight className="h-4 w-4" />
@@ -330,8 +330,8 @@ export default function QuizTake() {
           <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm" onClick={() => setPaletteDrawerOpen(false)} />
           <div className="bg-surface border-t border-border rounded-t-3xl w-full p-6 z-10 space-y-4 shadow-2xl relative animate-page">
             <div className="flex items-center justify-between pb-3 border-b border-border/80">
-              <span className="font-headings font-bold text-sm text-white">Quiz Question Navigator</span>
-              <button onClick={() => setPaletteDrawerOpen(false)} className="text-text-muted hover:text-white p-1">
+              <span className="font-headings font-bold text-sm text-text">Quiz Question Navigator</span>
+              <button onClick={() => setPaletteDrawerOpen(false)} className="text-text-muted hover:text-text p-1">
                 <X className="h-5 w-5" />
               </button>
             </div>
@@ -356,7 +356,7 @@ export default function QuizTake() {
           <div className="h-14 w-14 bg-primary/10 border border-primary/20 text-primary rounded-full flex items-center justify-center mx-auto shadow-md">
             <CheckCircle2 className="h-8 w-8 animate-pulse" />
           </div>
-          <h4 className="font-headings font-bold text-lg text-white">Ready to grade?</h4>
+          <h4 className="font-headings font-bold text-lg text-text">Ready to grade?</h4>
           
           {unansweredCount > 0 ? (
             <div className="bg-danger/10 border border-danger/25 p-4 rounded-xl text-xs text-red-400 font-semibold leading-relaxed flex items-start space-x-3 text-left">
