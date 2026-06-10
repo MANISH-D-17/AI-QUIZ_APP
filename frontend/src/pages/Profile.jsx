@@ -105,7 +105,7 @@ export default function Profile() {
           totalTaken,
           avgScore,
           totalTime,
-          currentStreak: currentStreak || 4
+          currentStreak: currentStreak || 0
         });
 
         // 2. Compile Mastery Radar Chart values dynamically from MongoDB records
@@ -128,7 +128,7 @@ export default function Profile() {
           const { sum, count } = categoryScores[cat];
           return {
             subject: cat,
-            score: count > 0 ? Math.round(sum / count) : 35 // Fallback default
+            score: count > 0 ? Math.round(sum / count) : 0 // Fallback default
           };
         });
 

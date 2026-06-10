@@ -13,24 +13,77 @@ export default function Navbar() {
   const isLoggedIn = !!localStorage.getItem('token');
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
+    localStorage.clear();
     // Force a reload or navigate to root
     navigate('/');
     window.location.reload();
   };
 
-  // Load latest streak & user profile on mount, route changes, and custom storage updates
+  // Load actual analytics streak & user profile on mount
   useEffect(() => {
-    const handleSync = () => {
-      setStats(getStats() || { currentStreak: 0 });
-      setProfile(getProfile() || { name: 'Alex', avatarInitials: 'AL' });
+    const handleSync = async () => {
+      setProfile(getProfile() || { name: 'User', avatarInitials: 'U' });
+
+      if (isLoggedIn) {
+        try {
+          // Import getAnalytics at top of file, or fetch dynamically if needed
+          const { getAnalytics } = await import('../../services/api');
+          const res = await getAnalytics();
+          if (res && res.success && res.data && res.data.history) {
+            // Calculate streak from history dynamically
+            const history = res.data.history;
+            let currentStreak = 0;
+            if (history.length > 0) {
+              const uniqueDates = [...new Set(history.map(att => att.date))].sort().reverse();
+              const todayStr = new Date().toISOString().split('T')[0];
+              
+              if (uniqueDates[0] === todayStr) {
+                currentStreak = 1;
+                let currentDay = new Date();
+                for (let i = 1; i < uniqueDates.length; i++) {
+                  currentDay.setDate(currentDay.getDate() - 1);
+                  const dayStr = currentDay.toISOString().split('T')[0];
+                  if (uniqueDates[i] === dayStr) {
+                    currentStreak++;
+                  } else {
+                    break;
+                  }
+                }
+              } else {
+                const yesterday = new Date();
+                yesterday.setDate(yesterday.getDate() - 1);
+                const yesterdayStr = yesterday.toISOString().split('T')[0];
+                
+                if (uniqueDates[0] === yesterdayStr) {
+                  currentStreak = 1;
+                  let currentDay = yesterday;
+                  for (let i = 1; i < uniqueDates.length; i++) {
+                    currentDay.setDate(currentDay.getDate() - 1);
+                    const dayStr = currentDay.toISOString().split('T')[0];
+                    if (uniqueDates[i] === dayStr) {
+                      currentStreak++;
+                    } else {
+                      break;
+                    }
+                  }
+                }
+              }
+            }
+            setStats({ currentStreak });
+          }
+        } catch (err) {
+          console.error("Failed to sync navbar streak", err);
+        }
+      } else {
+        setStats({ currentStreak: 0 });
+      }
     };
 
     handleSync();
 
     window.addEventListener('profile-updated', handleSync);
     return () => window.removeEventListener('profile-updated', handleSync);
-  }, [location.pathname]);
+  }, [location.pathname, isLoggedIn]);
 
   const navLinks = [
     { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },

@@ -16,48 +16,14 @@ const DEFAULT_PROFILE = {
 };
 
 const DEFAULT_STATS = {
-  totalTaken: 3,
-  avgScore: 73, // (80 + 50 + 90) / 3 = 73%
-  totalTime: 1320, // 240 + 480 + 600 = 1320s
-  currentStreak: 4,
-  lastQuizDate: '2026-05-20'
+  totalTaken: 0,
+  avgScore: 0,
+  totalTime: 0,
+  currentStreak: 0,
+  lastQuizDate: null
 };
 
-const DEFAULT_ATTEMPTS = [
-  {
-    id: "attempt-1",
-    quizId: "python-basics",
-    quizTitle: "Python Basics",
-    score: 80,
-    totalQuestions: 10,
-    correctCount: 8,
-    timeSpent: 240, // in seconds
-    date: "2026-05-18",
-    category: "Programming"
-  },
-  {
-    id: "attempt-2",
-    quizId: "world-war-ii",
-    quizTitle: "World War II",
-    score: 50,
-    totalQuestions: 10,
-    correctCount: 5,
-    timeSpent: 480, // in seconds
-    date: "2026-05-19",
-    category: "History"
-  },
-  {
-    id: "attempt-3",
-    quizId: "algebra-fundamentals",
-    quizTitle: "Algebra Fundamentals",
-    score: 90,
-    totalQuestions: 10,
-    correctCount: 9,
-    timeSpent: 600, // in seconds
-    date: "2026-05-20",
-    category: "Math"
-  }
-];
+const DEFAULT_ATTEMPTS = [];
 
 // Initialize Storage Helper
 function getJson(key, defaultValue) {

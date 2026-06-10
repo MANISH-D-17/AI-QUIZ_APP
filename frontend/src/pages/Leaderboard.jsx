@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Trophy, Calendar, Globe, Users, Clock, Award, Star, Search } from 'lucide-react';
 import toast from 'react-hot-toast';
-import { getResults } from '../services/api';
+import { getLeaderboard } from '../services/api';
 import quizzesData from '../data/quizzes.json';
 import { formatTime } from '../utils/validation';
 
@@ -11,72 +11,44 @@ export default function Leaderboard() {
   const [leaderboardData, setLeaderboardData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Mock competitors list for simulated global ranking experience
-  const competitors = [
-    { username: 'Sarah Jenkins', score: 100, timeTaken: 215, date: '2026-05-20', isUser: false, initials: 'SJ', bg: 'bg-emerald-500' },
-    { username: 'Marcus Aurelius', score: 95, timeTaken: 198, date: '2026-05-21', isUser: false, initials: 'MA', bg: 'bg-indigo-500' },
-    { username: 'Michael Chang', score: 92, timeTaken: 304, date: '2026-05-18', isUser: false, initials: 'MC', bg: 'bg-cyan-500' },
-    { username: 'Emma Watson', score: 90, timeTaken: 370, date: '2026-05-19', isUser: false, initials: 'EW', bg: 'bg-purple-500' },
-    { username: 'David Miller', score: 88, timeTaken: 295, date: '2026-05-20', isUser: false, initials: 'DM', bg: 'bg-orange-500' },
-    { username: 'Jessica Taylor', score: 85, timeTaken: 320, date: '2026-05-19', isUser: false, initials: 'JT', bg: 'bg-pink-500' },
-    { username: 'Daniel Anderson', score: 82, timeTaken: 435, date: '2026-05-21', isUser: false, initials: 'DA', bg: 'bg-teal-500' },
-    { username: 'Robert Thomas', score: 80, timeTaken: 270, date: '2026-05-20', isUser: false, initials: 'RT', bg: 'bg-rose-500' },
-    { username: 'Sophia Martinez', score: 78, timeTaken: 400, date: '2026-05-17', isUser: false, initials: 'SM', bg: 'bg-sky-500' },
-    { username: 'James Wilson', score: 75, timeTaken: 355, date: '2026-05-19', isUser: false, initials: 'JW', bg: 'bg-amber-500' },
-    { username: 'Linda Garcia', score: 72, timeTaken: 492, date: '2026-05-18', isUser: false, initials: 'LG', bg: 'bg-yellow-500' },
-    { username: 'William Robinson', score: 70, timeTaken: 378, date: '2026-05-20', isUser: false, initials: 'WR', bg: 'bg-lime-500' },
-    { username: 'Elizabeth Clark', score: 68, timeTaken: 450, date: '2026-05-19', isUser: false, initials: 'EC', bg: 'bg-fuchsia-500' },
-    { username: 'Joseph Rodriguez', score: 65, timeTaken: 545, date: '2026-05-16', isUser: false, initials: 'JR', bg: 'bg-red-500' }
-  ];
-
   useEffect(() => {
     const loadLeaderboard = async () => {
       try {
         setLoading(true);
-        // Fetch actual attempts history from MongoDB backend API
-        const attemptsRes = await getResults();
-        const userAttempts = attemptsRes.data || [];
-
-        let userHighScore = 0;
-        let userBestTime = 9999;
-        let userAttemptDate = '2026-05-24';
-
-        // Apply filtering based on selected Quiz
-        let relevantAttempts = userAttempts;
-        if (selectedQuizId !== 'all') {
-          relevantAttempts = userAttempts.filter(att => att.quizId === selectedQuizId);
-        }
-
-        if (relevantAttempts.length > 0) {
-          userHighScore = Math.max(...relevantAttempts.map(att => att.score));
-          // Get fastest time for that high score
-          const matching = relevantAttempts.filter(att => att.score === userHighScore);
-          userBestTime = Math.min(...matching.map(att => att.timeTaken));
-          userAttemptDate = matching[0].date;
-        }
+        // Fetch actual leaderboards from MongoDB backend API
+        const attemptsRes = await getLeaderboard(selectedQuizId);
+        const allAttempts = attemptsRes.data || [];
 
         const profile = JSON.parse(localStorage.getItem('profile')) || { name: 'User', avatarInitials: 'U' };
 
-        // Compile user record dynamically from database results
-        const userRecord = {
-          username: `${profile.name} (You) 🌟`,
-          score: userHighScore,
-          timeTaken: userBestTime === 9999 ? 0 : userBestTime,
-          date: userAttemptDate,
-          isUser: true,
-          initials: profile.avatarInitials,
-          bg: 'bg-gradient-to-tr from-primary to-accent'
-        };
+        // Process results to keep highest score per user
+        const userBestScores = {};
+        allAttempts.forEach(att => {
+          const userName = att.userName || 'Unknown User';
+          if (!userBestScores[userName] || userBestScores[userName].score < att.score || (userBestScores[userName].score === att.score && userBestScores[userName].timeTaken > att.timeTaken)) {
+            userBestScores[userName] = att;
+          }
+        });
 
-        // Combine user record with simulated players and sort
-        const combined = [...competitors];
-        
-        // Only show user on the board if they have actually attempted something, 
-        // or if looking at 'all' quizzes combined.
-        if (relevantAttempts.length > 0 || selectedQuizId === 'all') {
-          combined.push(userRecord);
-        }
+        const combined = Object.values(userBestScores).map(att => {
+          const userName = att.userName || 'Unknown User';
+          const isCurrentUser = userName === profile.name;
+          const bgColors = ['bg-emerald-500', 'bg-indigo-500', 'bg-cyan-500', 'bg-purple-500', 'bg-orange-500', 'bg-pink-500', 'bg-teal-500', 'bg-rose-500'];
+          // Use name length to pick a stable color
+          const colorIndex = userName.length % bgColors.length;
 
+          return {
+            username: isCurrentUser ? `${userName} (You) 🌟` : userName,
+            score: att.score,
+            timeTaken: att.timeTaken,
+            date: att.date,
+            isUser: isCurrentUser,
+            initials: userName.substring(0, 2).toUpperCase(),
+            bg: isCurrentUser ? 'bg-gradient-to-tr from-primary to-accent' : bgColors[colorIndex]
+          };
+        });
+
+        // Sort dynamically: highest score, lowest time
         combined.sort((a, b) => {
           if (b.score !== a.score) {
             return b.score - a.score;
