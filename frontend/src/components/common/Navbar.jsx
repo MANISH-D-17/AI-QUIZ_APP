@@ -1,13 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Flame, Trophy, Compass, LayoutDashboard, User, Menu, X, BarChart3 } from 'lucide-react';
 import { getStats, getProfile } from '../../services/storage';
 
 export default function Navbar() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [stats, setStats] = useState({ currentStreak: 4 });
   const [profile, setProfile] = useState({ name: 'Alex', avatarInitials: 'AL' });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const isLoggedIn = !!localStorage.getItem('token');
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    // Force a reload or navigate to root
+    navigate('/');
+    window.location.reload();
+  };
 
   // Load latest streak & user profile on mount, route changes, and custom storage updates
   useEffect(() => {
@@ -78,13 +88,22 @@ export default function Navbar() {
               <span>{stats.currentStreak} Day Streak</span>
             </div>
 
-            {/* Login Button */}
-            <Link 
-              to="/login" 
-              className="px-5 py-2 bg-primary text-white font-semibold rounded-xl shadow-md shadow-primary/20 hover:bg-primary/90 transition-all hover:-translate-y-0.5 active:scale-95"
-            >
-              Log In
-            </Link>
+            {/* Login/Logout Button */}
+            {isLoggedIn ? (
+              <button 
+                onClick={handleLogout}
+                className="px-5 py-2 bg-surface-2 text-text font-semibold rounded-xl shadow-sm hover:bg-surface-2/80 transition-all active:scale-95 border border-border"
+              >
+                Log Out
+              </button>
+            ) : (
+              <Link 
+                to="/login" 
+                className="px-5 py-2 bg-primary text-white font-semibold rounded-xl shadow-md shadow-primary/20 hover:bg-primary/90 transition-all hover:-translate-y-0.5 active:scale-95"
+              >
+                Log In
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -129,13 +148,25 @@ export default function Navbar() {
             );
           })}
           <div className="border-t border-border mt-4 pt-4 px-4 flex items-center justify-center">
-            <Link
-              to="/login"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center px-5 py-3 bg-primary text-white font-semibold rounded-xl shadow-md shadow-primary/20"
-            >
-              Log In
-            </Link>
+            {isLoggedIn ? (
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleLogout();
+                }}
+                className="w-full text-center px-5 py-3 bg-surface-2 text-text font-semibold rounded-xl shadow-sm border border-border"
+              >
+                Log Out
+              </button>
+            ) : (
+              <Link
+                to="/login"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full text-center px-5 py-3 bg-primary text-white font-semibold rounded-xl shadow-md shadow-primary/20"
+              >
+                Log In
+              </Link>
+            )}
           </div>
         </div>
       )}

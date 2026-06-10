@@ -55,14 +55,16 @@ export default function Leaderboard() {
           userAttemptDate = matching[0].date;
         }
 
-        // Compile Alex (the current user) record dynamically from database results
+        const profile = JSON.parse(localStorage.getItem('profile')) || { name: 'User', avatarInitials: 'U' };
+
+        // Compile user record dynamically from database results
         const userRecord = {
-          username: 'Alex (You) 🌟',
+          username: `${profile.name} (You) 🌟`,
           score: userHighScore,
           timeTaken: userBestTime === 9999 ? 0 : userBestTime,
           date: userAttemptDate,
           isUser: true,
-          initials: 'AL',
+          initials: profile.avatarInitials,
           bg: 'bg-gradient-to-tr from-primary to-accent'
         };
 

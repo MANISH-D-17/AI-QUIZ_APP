@@ -5,6 +5,7 @@ import { Toaster } from 'react-hot-toast';
 // Layout wrappers
 import MainLayout from './layouts/MainLayout';
 import QuizLayout from './layouts/QuizLayout';
+import ProtectedRoute from './components/common/ProtectedRoute';
 
 // Page modules
 import Home from './pages/Home';

@@ -221,7 +221,7 @@ export default function Profile() {
           {/* Circular avatar Initials */}
           <div className="h-20 w-20 md:h-24 md:w-24 rounded-full bg-gradient-to-tr from-accent via-indigo-500 to-primary p-[3px] shadow-lg">
             <div className="h-full w-full rounded-full bg-surface-2 flex items-center justify-center border border-border">
-              <span className="text-xl md:text-2xl font-extrabold text-white tracking-widest uppercase">
+              <span className="text-xl md:text-2xl font-extrabold text-text tracking-widest uppercase">
                 {profile.avatarInitials || "AL"}
               </span>
             </div>
@@ -234,7 +234,7 @@ export default function Profile() {
                   type="text"
                   value={tempName}
                   onChange={(e) => setTempName(e.target.value)}
-                  className="bg-surface-2 border border-border text-white text-sm rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary font-bold"
+                  className="bg-surface-2 border border-border text-text text-sm rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary font-bold"
                   maxLength={15}
                   required
                 />
@@ -254,12 +254,12 @@ export default function Profile() {
               </form>
             ) : (
               <div className="flex items-center justify-center md:justify-start space-x-2">
-                <h2 className="text-2xl font-headings font-bold text-white tracking-tight">
+                <h2 className="text-2xl font-headings font-bold text-text tracking-tight">
                   {profile.name}
                 </h2>
                 <button 
                   onClick={() => setEditMode(true)}
-                  className="text-text-muted hover:text-white p-1 rounded hover:bg-surface-2/40 transition-colors"
+                  className="text-text-muted hover:text-text p-1 rounded hover:bg-surface-2/40 transition-colors"
                   aria-label="Edit Profile Name"
                 >
                   <Edit3 className="h-4 w-4" />
@@ -293,7 +293,7 @@ export default function Profile() {
             <BookOpen className="h-6 w-6" />
           </div>
           <div>
-            <h4 className="text-2xl font-bold text-white">{stats.totalTaken}</h4>
+            <h4 className="text-2xl font-bold text-text">{stats.totalTaken}</h4>
             <span className="text-xs text-text-muted font-semibold uppercase tracking-wider">Quizzes Taken</span>
           </div>
         </div>
@@ -303,7 +303,7 @@ export default function Profile() {
             <Percent className="h-6 w-6" />
           </div>
           <div>
-            <h4 className="text-2xl font-bold text-white">{stats.avgScore}%</h4>
+            <h4 className="text-2xl font-bold text-text">{stats.avgScore}%</h4>
             <span className="text-xs text-text-muted font-semibold uppercase tracking-wider">Average Score</span>
           </div>
         </div>
@@ -313,7 +313,7 @@ export default function Profile() {
             <Clock className="h-6 w-6" />
           </div>
           <div>
-            <h4 className="text-2xl font-bold text-white">{totalHours} hrs</h4>
+            <h4 className="text-2xl font-bold text-text">{totalHours} hrs</h4>
             <span className="text-xs text-text-muted font-semibold uppercase tracking-wider">Duration Spent</span>
           </div>
         </div>
@@ -323,7 +323,7 @@ export default function Profile() {
             <Flame className="h-6 w-6 fill-secondary" />
           </div>
           <div>
-            <h4 className="text-2xl font-bold text-white">{stats.currentStreak} days</h4>
+            <h4 className="text-2xl font-bold text-text">{stats.currentStreak} days</h4>
             <span className="text-xs text-text-muted font-semibold uppercase tracking-wider">Current Streak</span>
           </div>
         </div>
@@ -335,7 +335,7 @@ export default function Profile() {
         {/* Left: Mastery Radar Chart */}
         <div className="bg-surface border border-border rounded-2xl p-6 shadow-xl space-y-6">
           <div className="flex items-center justify-between pb-3 border-b border-border/40">
-            <h3 className="text-lg font-headings font-bold text-white tracking-wider uppercase">
+            <h3 className="text-lg font-headings font-bold text-text tracking-wider uppercase">
               Subject Mastery Index
             </h3>
             <div className="flex items-center text-xs text-text-muted font-bold">
@@ -350,7 +350,7 @@ export default function Profile() {
         {/* Right: Badges Collection grid */}
         <div className="bg-surface border border-border rounded-2xl p-6 shadow-xl space-y-6">
           <div className="pb-3 border-b border-border/40">
-            <h3 className="text-lg font-headings font-bold text-white tracking-wider uppercase flex items-center">
+            <h3 className="text-lg font-headings font-bold text-text tracking-wider uppercase flex items-center">
               <Award className="h-5 w-5 text-primary mr-2" />
               Rewards & Badges
             </h3>
@@ -371,7 +371,7 @@ export default function Profile() {
                     {meta.icon}
                   </span>
                   <div className="space-y-1">
-                    <h5 className="font-bold text-sm text-white group-hover:text-primary transition-colors">
+                    <h5 className="font-bold text-sm text-text group-hover:text-primary transition-colors">
                       {meta.name}
                     </h5>
                     <p className="text-xs text-text-muted leading-relaxed">
@@ -411,7 +411,7 @@ export default function Profile() {
       {/* 4. ATTEMPT HISTORY LEDGER */}
       <div className="space-y-4">
         <div className="flex justify-between items-center pb-2 border-b border-border/40">
-          <h3 className="text-xl font-headings font-bold text-white">
+          <h3 className="text-xl font-headings font-bold text-text">
             Historical Attempts Log
           </h3>
           <span className="text-xs text-text-muted font-bold">
@@ -443,7 +443,7 @@ export default function Profile() {
 
                     return (
                       <tr key={att._id || att.id} className="hover:bg-surface-2/20 transition-colors">
-                        <td className="py-4 px-6 font-bold text-white">{att.quizTitle}</td>
+                        <td className="py-4 px-6 font-bold text-text">{att.quizTitle}</td>
                         <td className="py-4 px-6 text-center">
                           <span className={`inline-flex items-center text-xs font-bold px-2.5 py-1 rounded-full border ${scoreBadge}`}>
                             {att.score}%
@@ -478,7 +478,7 @@ export default function Profile() {
                   <button
                     onClick={handlePrevPage}
                     disabled={currentPage === 1}
-                    className="p-1.5 rounded bg-surface border border-border text-text-muted hover:text-white disabled:opacity-30 disabled:pointer-events-none transition-colors"
+                    className="p-1.5 rounded bg-surface border border-border text-text-muted hover:text-text disabled:opacity-30 disabled:pointer-events-none transition-colors"
                     aria-label="Previous Page"
                   >
                     <ChevronLeft className="h-4.5 w-4.5" />
@@ -486,7 +486,7 @@ export default function Profile() {
                   <button
                     onClick={handleNextPage}
                     disabled={currentPage === totalPages}
-                    className="p-1.5 rounded bg-surface border border-border text-text-muted hover:text-white disabled:opacity-30 disabled:pointer-events-none transition-colors"
+                    className="p-1.5 rounded bg-surface border border-border text-text-muted hover:text-text disabled:opacity-30 disabled:pointer-events-none transition-colors"
                     aria-label="Next Page"
                   >
                     <ChevronRight className="h-4.5 w-4.5" />
